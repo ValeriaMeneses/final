@@ -5,7 +5,6 @@ import {Link, NavLink} from 'react-router-dom';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {Collapsible, CollapsibleItem, Tab, Tabs} from 'react-materialize';
 
-
 export default class DynamicEntrevistar extends React.Component{
   componentWillMount () {
     request

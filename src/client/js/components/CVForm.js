@@ -2,8 +2,6 @@ import React from 'react';
 import request from 'superagent';
 import {Tab, Tabs} from 'react-materialize';
 
-
-
 export default class CVForm extends React.Component{
   constructor(){
     super();
