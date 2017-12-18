@@ -3,6 +3,8 @@ import request from 'superagent';
 import ReactDOM from 'react-dom';
 import {Link, NavLink} from 'react-router-dom';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {Collapsible, CollapsibleItem, Tab, Tabs} from 'react-materialize';
+
 
 export default class DynamicEntrevistar extends React.Component{
   componentWillMount () {
@@ -67,103 +69,108 @@ export default class DynamicEntrevistar extends React.Component{
           </div>
           <div className="contenedor-cv">
             <div className="informacion">
-              <ul id="tabs-swipe-demo" className="tabs blue">
-                <li className="tab col s3"><a className="active" href="#test-swipe-1">Información Básica</a></li>
-                <li className="tab col s3"><a href="#test-swipe-2">Formación Académica</a></li>
-                <li className="tab col s3"><a href="#test-swipe-3">Experiencia Laboral</a></li>
-                <li className="tab col s3"><a href="#test-swipe-4">Información Adicional</a></li>
-                <li className="tab col s3"><a href="#test-swipe-5">Idiomas</a></li>
-              </ul>
-              <div id="test-swipe-1" className="col s12">
-                  <ul className="collapsible" data-collapsible="expandable">
-                  <li>
-                    <div className="collapsible-header"><i className="material-icons">perm_identity</i>Nombre(s): <span>{cv.nombres}</span> </div>
-                  </li>
-                  <li>
-                    <div className="collapsible-header"><i className="material-icons">perm_identity</i>Apellido(s): <span>{cv.apellidos}</span></div>
-                  </li>
-                  <li>
-                    <div className="collapsible-header"><i className="material-icons">wc</i>Sexo: <span>{cv.sexo}</span></div>
-                  </li>
-                  <li>
-                    <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de nacimiento: <span> {cv.fechaNacimiento}</span></div>
-                  </li>
-                  <li>
-                    <div className="collapsible-header"><i className="material-icons">person_pin_circle</i>Direccion: <span>{cv.direccion}</span></div>
-                  </li>
-                  <li>
-                    <div className="collapsible-header"><i className="material-icons">phone</i>Telefono: <span>{cv.telefono}</span></div>
-                  </li>
-                  <li>
-                    <div className="collapsible-header"><i className="material-icons">email</i>E-mail: <span>{cv.email}</span></div>
-                  </li>
-                    <li>
-                      <div className="collapsible-header"><i className="material-icons">filter_list</i>Categoria</div>
-                      <div className="collapsible-body"><span>Ingenieria</span></div>
-                    </li>
-                  </ul>
-              </div>
-              <div id="test-swipe-2" className="col s12">
-                <ul className="collapsible" data-collapsible="expandable">
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">location_city</i>Nombre de la Institución: <span>{cv.nombreInstituto}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">school</i>Titulo adquirido: <span>{cv.tituloAdquirido}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de inicio: <span>{cv.fechaInicioEdu}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de termino: <span>{cv.fechaTerminoEdu}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">school</i>No. de cedula: <span>{cv.cedula}</span></div>
-                </li>
-                </ul>
-              </div>
-              <div id="test-swipe-3" className="col s12">
-                <ul className="collapsible" data-collapsible="expandable">
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">assignment_ind</i>Puesto: <span>{cv.puesto}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">transfer_within_a_station</i>Funciones: <span>{cv.funciones}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">domain</i>Empresa: <span>{cv.empresa}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de inicio: <span>{cv.fechaInicioExp}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de termino: <span>{cv.fechaTerminoExp}</span></div>
-                </li>
-                </ul>
-              </div>
-              <div id="test-swipe-4" className="col s12">
-                <ul className="collapsible" data-collapsible="expandable">
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">insert_drive_file</i>Cursos: <span>{cv.cursos}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">school</i>Seminarios: <span>{cv.seminarios}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">school</i>Diplomados: <span>{cv.diplomados}</span></div>
-                </li>
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">note</i>Otros: <span>{cv.otros}</span></div>
-                </li>
-                </ul>
-              </div>
-              <div id="test-swipe-5" className="col s12">
-                <ul className="collapsible" data-collapsible="expandable">
-                <li>
-                  <div className="collapsible-header"><i className="material-icons">record_voice_over</i>Idiomas: <span>{cv.idiomas}</span></div>
-                </li>
-                </ul>
-              </div>
+              <Tabs className='tab-demo z-depth-1 blue'>
+                <Tab title="Información Básica" className="active">
+                  <div className="col s12">
+                      <ul className="collapsible" data-collapsible="expandable">
+                        <li>
+                          <div className="collapsible-header"><i className="material-icons">perm_identity</i>Nombre(s): <span>{cv.nombres}</span> </div>
+                        </li>
+                        <li>
+                          <div className="collapsible-header"><i className="material-icons">perm_identity</i>Apellido(s): <span>{cv.apellidos}</span></div>
+                        </li>
+                        <li>
+                          <div className="collapsible-header"><i className="material-icons">wc</i>Sexo: <span>{cv.sexo}</span></div>
+                        </li>
+                        <li>
+                          <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de nacimiento: <span> {cv.fechaNacimiento}</span></div>
+                        </li>
+                        <li>
+                          <div className="collapsible-header"><i className="material-icons">person_pin_circle</i>Direccion: <span>{cv.direccion}</span></div>
+                        </li>
+                        <li>
+                          <div className="collapsible-header"><i className="material-icons">phone</i>Telefono: <span>{cv.telefono}</span></div>
+                        </li>
+                        <li>
+                          <div className="collapsible-header"><i className="material-icons">email</i>E-mail: <span>{cv.email}</span></div>
+                        </li>
+                        <li>
+                          <div className="collapsible-header"><i className="material-icons">filter_list</i>Categoria</div>
+                          <div className="collapsible-body"><span>categoria</span></div>
+                        </li>
+                      </ul>
+                  </div>
+                </Tab>
+                <Tab title="Formación Académica">
+                  <div className="col s12">
+                    <ul className="collapsible" data-collapsible="expandable">
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">location_city</i>Nombre de la Institución: <span>{cv.nombreInstituto}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">school</i>Titulo adquirido: <span>{cv.tituloAdquirido}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de inicio: <span>{cv.fechaInicioEdu}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de termino: <span>{cv.fechaTerminoEdu}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">school</i>No. de cedula: <span>{cv.cedula}</span></div>
+                      </li>
+                    </ul>
+                  </div>
+                </Tab>
+                <Tab title="Experiencia Laboral">
+                  <div className="col s12">
+                    <ul className="collapsible" data-collapsible="expandable">
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">assignment_ind</i>Puesto: <span>{cv.puesto}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">transfer_within_a_station</i>Funciones: <span>{cv.funciones}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">domain</i>Empresa: <span>{cv.empresa}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de inicio: <span>{cv.fechaInicioExp}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">date_range</i>Fecha de termino: <span>{cv.fechaTerminoExp}</span></div>
+                      </li>
+                    </ul>
+                  </div>
+                </Tab>
+                <Tab title="Información Adicional">
+                  <div className="col s12">
+                    <ul className="collapsible" data-collapsible="expandable">
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">insert_drive_file</i>Cursos: <span>{cv.cursos}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">school</i>Seminarios: <span>{cv.seminarios}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">school</i>Diplomados: <span>{cv.diplomados}</span></div>
+                      </li>
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">note</i>Otros: <span>{cv.otros}</span></div>
+                      </li>
+                    </ul>
+                  </div>
+                </Tab>
+                <Tab title="Idiomas">
+                  <div id="test-swipe-5" className="col s12">
+                    <ul className="collapsible" data-collapsible="expandable">
+                      <li>
+                        <div className="collapsible-header"><i className="material-icons">record_voice_over</i>Idiomas: <span>{cv.idiomas}</span></div>
+                      </li>
+                    </ul>
+                  </div>
+                </Tab>
+              </Tabs>
             </div>
             <div className="habilidades">
               <h5>Habilidades</h5>
@@ -171,7 +178,7 @@ export default class DynamicEntrevistar extends React.Component{
                 <h6>Trabajo en equipo</h6>
                 <div>
                   <select className="browser-default" ref="trabajoEquipo">
-                    <option value="" disabled selected>Selecionar</option>
+                    <option value="" disabled selected>Seleccionar</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -190,7 +197,7 @@ export default class DynamicEntrevistar extends React.Component{
                 <h6>Liderazgo</h6>
                 <div>
                   <select className="browser-default" ref="liderazgo">
-                    <option value="" disabled selected>Selecionar</option>
+                    <option value="" disabled selected>Seleccionar</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -208,7 +215,7 @@ export default class DynamicEntrevistar extends React.Component{
                 <h6>Conocimiento Tecnico</h6>
                 <div>
                   <select className="browser-default" ref="conocimientoTecnico">
-                    <option value="" disabled selected>Selecionar</option>
+                    <option value="" disabled selected>Seleccionar</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -226,7 +233,7 @@ export default class DynamicEntrevistar extends React.Component{
                 <h6>Facilidad de comunicacion</h6>
                 <div>
                   <select className="browser-default" ref="facilidadComunicacion">
-                    <option value="" disabled selected>Selecionar</option>
+                    <option value="" disabled selected>Seleccionar</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -244,7 +251,7 @@ export default class DynamicEntrevistar extends React.Component{
                 <h6>Creatividad</h6>
                 <div>
                   <select className="browser-default" ref="creatividad">
-                    <option value="" disabled selected>Selecionar</option>
+                    <option value="" disabled selected>Seleccionar</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

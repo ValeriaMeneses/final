@@ -1,6 +1,7 @@
 body{
   font-size: larger;
 }
+
 .carrusel{
   height: 100vh;
 }
@@ -108,13 +109,23 @@ body{
 .cv{
   background: rgba(255, 255, 255, 0.95);
   border: 4px solid;
+
+}
+.row .col{
+  padding: 0 !important;
+
+}
+.cv .padding{
+  padding: 5px 2% !important;
 }
 .cv ul{
   background: navy;
 }
 .tabs .tab a{
   color: white !important;
+
 }
+
 .select{
   margin-left: 1% !important;
   color: gray;

@@ -3,6 +3,11 @@ import {Link, NavLink} from 'react-router-dom';
 import request from 'superagent';
 import { Redirect } from 'react-router-dom';
 
+  $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
+
+
 export default class MenuNav extends React.Component{
   constructor(){
     super();
@@ -21,19 +26,19 @@ export default class MenuNav extends React.Component{
   render(){
     if (this.props.isAuthenticated === false) {
 
-      return <Redirect to='/login' />
+     return <Redirect to='/login' />
     }
       return(
           <nav className="menu">
             <div className="nav-wrapper">
               <Link to="/principalPage" className="brand-logo"><i className="material-icons">import_contacts</i>CVEntrevistado</Link>
               <ul className="right hide-on-med-and-down">
-                <li><Link to="/principalPage" className="tooltipped" data-delay="50" data-tooltip="Home"><i className="material-icons">home</i></Link></li>
-                <li><Link to="/cv-form" className="tooltipped" data-delay="50" data-tooltip="Agregar CV"><i className="material-icons">description</i></Link></li>
-                <li><Link to="/filtros" className="tooltipped" data-delay="50" data-tooltip="CV's"><i className="material-icons">folder_shared</i></Link></li>
-                <li><Link to="/categories/categories" className="tooltipped" data-delay="50" data-tooltip="Categorias"><i className="material-icons">filter_list</i></Link></li>
-                <li><Link to="/dinamic/cv" className="tooltipped" data-delay="50" data-tooltip="Entrevista"><i className="material-icons">assignment_ind</i></Link></li>
-                <li><button className="tooltipped" data-delay="50" data-tooltip="Cerrar sesion" onClick={this.logOut}><i className="material-icons">lock</i></button></li>
+                <li><Link to="/principalPage" title="Home"><i className="material-icons">home</i></Link></li>
+                <li><Link to="/cv-form" title="Agregar CV"><i className="material-icons">description</i></Link></li>
+                <li><Link to="/filtros" title="CV's"><i className="material-icons">folder_shared</i></Link></li>
+                <li><Link to="/categories/categories" title="Categorias"><i className="material-icons">filter_list</i></Link></li>
+                <li><Link to="/dinamic/cv" title="Entrevista"><i className="material-icons">assignment_ind</i></Link></li>
+                <li><button title="Cerrar sesion" onClick={this.logOut}><i className="material-icons">lock</i></button></li>
               </ul>
             </div>
           </nav>
