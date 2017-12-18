@@ -20,6 +20,8 @@ export default class Category extends React.Component{
           <Link to="/categories/rh" className="waves-effect waves-light blue darken-2 btn">Recursos Humanos</Link>
           <Link to="/categories/ventas" className="waves-effect waves-light blue darken-2 btn">Ventas</Link>
           <Link to="/categories/marketing" className="waves-effect waves-light blue darken-2 btn">Marketing</Link>
+          <Link to="/categories/produccion" className="waves-effect waves-light blue darken-2 btn">Producción</Link>
+          <Link to="/categories/direccion" className="waves-effect waves-light blue darken-2 btn">Dirección General</Link>
         </div>
       </Link>
     )

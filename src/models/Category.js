@@ -5,5 +5,19 @@ class Category extends Model {
     return 'category';
   }
 
+  static get relationMappings () {
+    const CV = require('./CV.js');
+    return{
+      curriculums : {
+        relation: Model.HasManyRelation,
+        modelClass: CV,
+        join:{
+          from: 'category.id',
+          to: 'curriculums.categoryId'
+        }
+      }
+    }
+  }
+
 }
 module.exports = Category;

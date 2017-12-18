@@ -1,15 +1,15 @@
 const categoryDataRows = [
   {
-    categorias:'Administracion'
+    categorias:'Administración'
   },
   {
     categorias:'Contabilidad'
   },
   {
-    categorias:'Ingenieria'
+    categorias:'Ingeniería'
   },
   {
-    categorias:'Tecnologias de la informacion'
+    categorias:'Tecnologías de la información'
   },
   {
     categorias:'Recursos Humanos'
@@ -19,7 +19,14 @@ const categoryDataRows = [
   },
   {
     categorias:'Marketing'
+  },
+  {
+    categorias:'Producción'
+  },
+  {
+    categorias:'Dirección General'
   }
+
 
 ];
 

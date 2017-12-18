@@ -112,7 +112,7 @@ export default class CVForm extends React.Component{
                 <div className="row select padding">
                   <label>Categoria</label>
                   <select className="browser-default" ref="categoria">
-                    <option value="" disabled selected>Choose your option</option>
+                    <option value="" disabled selected>Elige una opciòn</option>
                     <option value="1">Administracion</option>
                     <option value="2">Contabilidad</option>
                     <option value="3">Ingenieria</option>
@@ -120,6 +120,8 @@ export default class CVForm extends React.Component{
                     <option value="5">Recursos Humanos</option>
                     <option value="6">Ventas</option>
                     <option value="7">Marketing</option>
+                    <option value="8">Producción</option>
+                    <option value="9">Dirección General</option>
                   </select>
                 </div>
               </form>

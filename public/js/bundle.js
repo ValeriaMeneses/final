@@ -28351,7 +28351,7 @@ var CVForm = function (_React$Component) {
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'option',
                     { value: '', disabled: true, selected: true },
-                    'Choose your option'
+                    'Elige una opci\xF2n'
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'option',
@@ -28387,6 +28387,16 @@ var CVForm = function (_React$Component) {
                     'option',
                     { value: '7' },
                     'Marketing'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'option',
+                    { value: '8' },
+                    'Producci\xF3n'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'option',
+                    { value: '9' },
+                    'Direcci\xF3n General'
                   )
                 )
               )
@@ -28836,6 +28846,16 @@ var Category = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
           { to: '/categories/marketing', className: 'waves-effect waves-light blue darken-2 btn' },
           'Marketing'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+          { to: '/categories/produccion', className: 'waves-effect waves-light blue darken-2 btn' },
+          'Producci\xF3n'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+          { to: '/categories/direccion', className: 'waves-effect waves-light blue darken-2 btn' },
+          'Direcci\xF3n General'
         )
       )
     );

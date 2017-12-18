@@ -54,6 +54,7 @@ function updateCV(req, res) {
 function getCategory(req, res) {
   Category
     .query()
+    .eager('curriculums')
     .then(data => res.json(data));
 }
 
