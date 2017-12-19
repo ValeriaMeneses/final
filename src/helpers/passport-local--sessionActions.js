@@ -15,6 +15,6 @@ exports.configDeserializeUser = function( config={} ) {
       .returning('*')
 
     if(usr) delete usr.password
-    done(null, usr)
+    done(null, usr || null)
   }
 }
