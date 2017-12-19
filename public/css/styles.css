@@ -1,0 +1,233 @@
+body{
+  font-size: larger;
+}
+
+.carrusel{
+  height: 100vh;
+}
+.slider{
+  height: 100vh !important;
+}
+.carrusel ul{
+  height: 100vh !important;
+}
+.password{
+  color: navy;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.carrusel i{
+  font-size: 70px !important;
+}
+.password form{
+  padding: 40px;
+  padding-top: 100px;
+}
+.input-field{
+  width:100% !important;
+}
+.password .row{
+  margin: 0 !important;
+}
+
+.createUser{
+  background-image: url("../images/5.jpg");
+  background-size: cover;
+  padding: 3% 15%;
+  height: 100vh;
+  color: #200000;
+  font-size: larger
+}
+.createUser form{
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4%;
+  border: 5px solid;
+  border-radius: 20px;
+}
+
+.principalPage{
+  height: 90vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.principalPage div{
+  text-align: center;
+}
+.principalPage a{
+  background: rgba(236, 240, 241,0.6) !important;
+  font-size: 30px;
+  border: 4px solid;
+  border-radius: 100px;
+  width: 80%;
+}
+.principalPage i{
+  font-size: 90px;
+}
+.cvs{
+  background-image: url("../images/19.jpg");
+  background-size: cover;
+  padding: 30% 0 !important;
+}
+.categorias{
+  background-image: url("../images/14.jpg");
+  background-size: cover;
+  padding: 30% 0 !important;
+}
+.entrevista{
+  background-image: url("../images/9.jpg");
+  background-size: cover;
+  padding: 30% 0 !important;
+}
+
+.menu{
+  background: #004060;
+  height: 100px;
+}
+.menu div{
+  padding: 14px;
+}
+.brand-logo{
+  font-size: 50px !important;
+}
+.menu i{
+  font-size: 50px !important;
+}
+.menu button{
+  background: transparent;
+  border-radius: 50px;
+}
+
+.cvForm{
+  background-size: cover;
+  padding: 2%;
+  width: 100%;
+  height: 125vh;
+  color: navy;
+}
+.cv{
+  background: rgba(255, 255, 255, 0.95);
+  border: 4px solid;
+
+}
+.row .col{
+  padding: 0 !important;
+
+}
+.cv .padding{
+  padding: 5px 2% !important;
+}
+.cv ul{
+  background: navy;
+}
+.tabs .tab a{
+  color: white !important;
+
+}
+
+.select{
+  margin-left: 1% !important;
+  color: gray;
+}
+.select select{
+  background: transparent;
+  width: 20%;
+
+}
+.cv button{
+  margin-left: 43%;
+  margin-bottom: 1%;
+}
+
+.categories{
+  background-image: url("../images/29.jpg");
+  background-size: cover;
+  padding: 3%;
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+}
+.category{
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 4% 12%;
+
+}
+.category > button{
+  height: 100px;
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-category{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.filtros{
+  /*background-image: url("../images/27.jpg");*/
+  background-size: cover;
+  padding: 3%;
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+}
+.filtros button{
+  height: 60px;
+  font-size: larger;
+}
+
+.cvsolo{
+  margin: 0;
+  padding: 2%;
+  height: 120vh;
+}
+.cvsolo button{
+  margin-left: 43%;
+  height: 50px;
+}
+.collapsible-body{
+  font-weight: bold !important;
+}
+.informacion .tabs .tab a{
+  padding: 0 7px !important;
+}
+.contenedor-cv{
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 3fr 1fr;
+}
+
+.informacionCvSolo{
+  font-size: 20px !important;
+}
+.informacionCvSolo span{
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.contenedor-cv span{
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.Cventrevistado{
+  padding: 3% !important;
+}
+.contenidoCV{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2em;
+}
+.notas{
+  text-align: justify;
+}
+.titulo span{
+  text-transform: capitalize;
+}
+.tabla{
+  padding: 3% !important;
+  font-size: larger;
+}
