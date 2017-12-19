@@ -16,8 +16,15 @@ const { configDeserializeUser, configSerializeUser } = require('./src/helpers/pa
 
 const app = express();
 
-const appDb = connectToDb(dbConfigObj.development);
+let dbConnectionConfig
 
+if( process.env.NODE_ENV === 'production' ){
+  dbConnectionConfig = dbConfigObj.production
+} else {
+  dbConnectionConfig = dbConfigObj.development
+}
+
+const appDb = connectToDb(dbConnectionConfig);
 Model.knex(appDb);
 
 app.locals.db = appDb;
