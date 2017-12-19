@@ -14,7 +14,7 @@ export default class PrincipalPage extends React.Component{
           </Link>
         </div>
         <div className="categorias col s4">
-          <Link to="/categories/categories" className="waves-effect " type="submit" name="action">
+          <Link to="/categories" className="waves-effect " type="submit" name="action">
             <i className="material-icons">filter_list</i>
             <br/>
             Categorias

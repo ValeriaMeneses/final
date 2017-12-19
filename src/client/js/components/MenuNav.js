@@ -13,6 +13,12 @@ export default class MenuNav extends React.Component{
     super();
 
     this.logOut = this.logOut.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(){
+    this.setState({
+      visibleCat: ''
+    })
   }
   logOut(){
     request
@@ -36,8 +42,8 @@ export default class MenuNav extends React.Component{
                 <li><Link to="/principalPage" title="Home"><i className="material-icons">home</i></Link></li>
                 <li><Link to="/cv-form" title="Agregar CV"><i className="material-icons">description</i></Link></li>
                 <li><Link to="/filtros" title="CV's"><i className="material-icons">folder_shared</i></Link></li>
-                <li><Link to="/categories/categories" title="Categorias"><i className="material-icons">filter_list</i></Link></li>
-                <li><Link to="/dinamic/cv" title="Entrevista"><i className="material-icons">assignment_ind</i></Link></li>
+                <li><Link to="/categories/categorias" title="Categorias"><i className="material-icons">filter_list</i></Link></li>
+                <li><Link to="/dinamic/cv" title="Entrevista" onClick={this.handleClick}><i className="material-icons">assignment_ind</i></Link></li>
                 <li><button title="Cerrar sesion" onClick={this.logOut}><i className="material-icons">lock</i></button></li>
               </ul>
             </div>

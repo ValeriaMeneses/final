@@ -59,7 +59,6 @@ class App extends React.Component {
      request
        .get('/auth/current')
        .then(user => {
-         console.log('active session: ', user);
          this.setState({
            isAuthenticated: user.body.id ? true : false
          });
@@ -84,7 +83,7 @@ class App extends React.Component {
 						<Route path='/createUser' component={CreateUser}/>
 						<Route path='/principalPage' component={PrincipalPage}/>
 						<Route path='/cv-form' component={CVForm}/>
-						<Route path='/categories/:category' component={Category}/>
+						<Route path='/categories' component={Category}/>
 						<Route path='/filtros' component={FiltroCVs}/>
 						<Route path='/dinamic/cv' component={CVSolo}/>
 						<Route path='/newcategory' component={NewCategory}/>

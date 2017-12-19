@@ -33,7 +33,6 @@ export default class Category extends React.Component{
   render(){
     let category = this.state.categories
 
-    console.log(this.state.visibleCat);
 
     let filter = category.filter(element => {
       if (this.state.visibleCat === element.id) {
@@ -43,7 +42,6 @@ export default class Category extends React.Component{
     .map(element => {
       let p = element.curriculums
       let o = p.map(element => {
-        console.log(element);
         let idCV = "/dynamic/" + element.id
         return (
                 <tr key={element.id}>
@@ -94,7 +92,5 @@ export default class Category extends React.Component{
         </div>
       )
     }
-
-
   }
 }

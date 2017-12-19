@@ -4842,7 +4842,6 @@ var App = function (_React$Component) {
 		var _this3 = this;
 
 		__WEBPACK_IMPORTED_MODULE_3_superagent___default.a.get('/auth/current').then(function (user) {
-			console.log('active session: ', user);
 			_this3.setState({
 				isAuthenticated: user.body.id ? true : false
 			});
@@ -4873,7 +4872,7 @@ var App = function (_React$Component) {
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], { path: '/createUser', component: __WEBPACK_IMPORTED_MODULE_7__components_CreateUser_js__["a" /* default */] }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], { path: '/principalPage', component: __WEBPACK_IMPORTED_MODULE_8__components_PrincipalPage_js__["a" /* default */] }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], { path: '/cv-form', component: __WEBPACK_IMPORTED_MODULE_10__components_CVForm_js__["a" /* default */] }),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], { path: '/categories/:category', component: __WEBPACK_IMPORTED_MODULE_11__components_Category_js__["a" /* default */] }),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], { path: '/categories', component: __WEBPACK_IMPORTED_MODULE_11__components_Category_js__["a" /* default */] }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], { path: '/filtros', component: __WEBPACK_IMPORTED_MODULE_12__components_FiltroCVs_js__["a" /* default */] }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], { path: '/dinamic/cv', component: __WEBPACK_IMPORTED_MODULE_13__components_CVSolo_js__["a" /* default */] }),
 				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Route */], { path: '/newcategory', component: __WEBPACK_IMPORTED_MODULE_14__components_NewCategory_js__["a" /* default */] }),
@@ -27910,7 +27909,7 @@ var PrincipalPage = function (_React$Component) {
         { className: 'categorias col s4' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-          { to: '/categories/categories', className: 'waves-effect ', type: 'submit', name: 'action' },
+          { to: '/categories', className: 'waves-effect ', type: 'submit', name: 'action' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'i',
             { className: 'material-icons' },
@@ -27977,8 +27976,15 @@ var MenuNav = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, _React$Component.call(this));
 
     _this.logOut = _this.logOut.bind(_this);
+    _this.handleClick = _this.handleClick.bind(_this);
     return _this;
   }
+
+  MenuNav.prototype.handleClick = function handleClick() {
+    this.setState({
+      visibleCat: ''
+    });
+  };
 
   MenuNav.prototype.logOut = function logOut() {
     var _this2 = this;
@@ -28059,7 +28065,7 @@ var MenuNav = function (_React$Component) {
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-              { to: '/categories/categories', title: 'Categorias' },
+              { to: '/categories/categorias', title: 'Categorias' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'i',
                 { className: 'material-icons' },
@@ -28072,7 +28078,7 @@ var MenuNav = function (_React$Component) {
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-              { to: '/dinamic/cv', title: 'Entrevista' },
+              { to: '/dinamic/cv', title: 'Entrevista', onClick: this.handleClick },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'i',
                 { className: 'material-icons' },
@@ -28816,8 +28822,6 @@ var Category = function (_React$Component) {
 
     var category = this.state.categories;
 
-    console.log(this.state.visibleCat);
-
     var filter = category.filter(function (element) {
       if (_this3.state.visibleCat === element.id) {
         return true;
@@ -28825,7 +28829,6 @@ var Category = function (_React$Component) {
     }).map(function (element) {
       var p = element.curriculums;
       var o = p.map(function (element) {
-        console.log(element);
         var idCV = "/dynamic/" + element.id;
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'tr',
