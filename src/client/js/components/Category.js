@@ -43,13 +43,18 @@ export default class Category extends React.Component{
     .map(element => {
       let p = element.curriculums
       let o = p.map(element => {
-        return element.nombres
+        console.log(element);
+        let idCV = "/dynamic/" + element.id
+        return (
+                <tr key={element.id}>
+                  <td>{element.nombres.toUpperCase() + ' ' + element.apellidos.toUpperCase()}</td>
+                  <td>{element.tituloAdquirido}</td>
+                  <td><Link to={idCV}><i className="large material-icons">star</i></Link></td>
+                </tr>
+        )
       })
-      console.log(o);
+        return o
     })
-
-
-
 
 
     let filtroCategory = category.map( (element)=>{
@@ -58,17 +63,38 @@ export default class Category extends React.Component{
         <button key={element.id} onClick={ ()=>{ this.Clicked(element.id) } } className="waves-effect waves-light blue darken-2 btn">{element.categorias.toUpperCase()}</button>
       )
     })
+    if (this.state.visibleCat !== '') {
+      return (
+        <div>
+          <table className="highlight">
+            <thead>
+              <tr>
+                  <th>Nombre</th>
+                  <th>Especialidad</th>
+                  <th></th>
+              </tr>
+            </thead>
 
-    return(
-      <div className = "categories">
-        <div className="btn-category">
-          <Link to="" className="btn-floating btn-large waves-effect waves-light blue btn " title="GRAFICAS"><i className="material-icons">insert_chart</i></Link>
-          <Link to="/newcategory" className="btn-floating btn-large waves-effect waves-light blue btn "title="AGREGAR CATEGORIA"><i className="material-icons">add</i></Link>
+            <tbody>
+              {filter}
+            </tbody>
+          </table>
         </div>
-        <div className="category">
-          {filtroCategory}
+      )
+    }else {
+      return(
+        <div className = "categories">
+          <div className="btn-category">
+            <Link to="" className="btn-floating btn-large waves-effect waves-light blue btn " title="GRAFICAS"><i className="material-icons">insert_chart</i></Link>
+            <Link to="/newcategory" className="btn-floating btn-large waves-effect waves-light blue btn "title="AGREGAR CATEGORIA"><i className="material-icons">add</i></Link>
+          </div>
+          <div className="category">
+            {filtroCategory}
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
+
+
   }
 }

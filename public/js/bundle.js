@@ -28164,7 +28164,8 @@ var CVForm = function (_React$Component) {
         publicaciones: this.refs.publicaciones.value || null,
         otros: this.refs.otros.value || null,
         idiomas: this.refs.idiomas.value || null,
-        entrevistado: 0
+        entrevistado: 0,
+        categoryId: this.refs.categoria.value
 
       }).then(function (newcv) {
         console.log(newcv);
@@ -28824,9 +28825,37 @@ var Category = function (_React$Component) {
     }).map(function (element) {
       var p = element.curriculums;
       var o = p.map(function (element) {
-        return element.nombres;
+        console.log(element);
+        var idCV = "/dynamic/" + element.id;
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'tr',
+          { key: element.id },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'td',
+            null,
+            element.nombres.toUpperCase() + ' ' + element.apellidos.toUpperCase()
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'td',
+            null,
+            element.tituloAdquirido
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'td',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+              { to: idCV },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'i',
+                { className: 'large material-icons' },
+                'star'
+              )
+            )
+          )
+        );
       });
-      console.log(o);
+      return o;
     });
 
     var filtroCategory = category.map(function (element) {
@@ -28839,38 +28868,72 @@ var Category = function (_React$Component) {
         element.categorias.toUpperCase()
       );
     });
-
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'categories' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    if (this.state.visibleCat !== '') {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'btn-category' },
+        null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-          { to: '', className: 'btn-floating btn-large waves-effect waves-light blue btn ', title: 'GRAFICAS' },
+          'table',
+          { className: 'highlight' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'i',
-            { className: 'material-icons' },
-            'insert_chart'
+            'thead',
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'tr',
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'th',
+                null,
+                'Nombre'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'th',
+                null,
+                'Especialidad'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('th', null)
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'tbody',
+            null,
+            filter
+          )
+        )
+      );
+    } else {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'categories' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'btn-category' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+            { to: '', className: 'btn-floating btn-large waves-effect waves-light blue btn ', title: 'GRAFICAS' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'i',
+              { className: 'material-icons' },
+              'insert_chart'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+            { to: '/newcategory', className: 'btn-floating btn-large waves-effect waves-light blue btn ', title: 'AGREGAR CATEGORIA' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'i',
+              { className: 'material-icons' },
+              'add'
+            )
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-          { to: '/newcategory', className: 'btn-floating btn-large waves-effect waves-light blue btn ', title: 'AGREGAR CATEGORIA' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'i',
-            { className: 'material-icons' },
-            'add'
-          )
+          'div',
+          { className: 'category' },
+          filtroCategory
         )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'category' },
-        filtroCategory
-      )
-    );
+      );
+    }
   };
 
   return Category;
