@@ -19,7 +19,7 @@ exports.down = function(knex, Promise) {
   return knex
     .schema
     .table('curriculums', table =>{
-      table.dropForeingn('categoryId');
+      table.dropForeign('categoryId');
       table.dropColumn('companyId')
     })
 };
