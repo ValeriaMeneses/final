@@ -10,7 +10,7 @@ const apiRouter = Router();
 function getCVs(req, res) {
   CV
     .query()
-    .then(data => res.json(data));
+    .then(data => res.json(data).status(20));
 }
 
 function getCvId(req, res) {

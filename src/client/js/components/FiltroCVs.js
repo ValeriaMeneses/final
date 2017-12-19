@@ -10,7 +10,7 @@ export default class FiltroCVs extends React.Component{
       .then(data => {
         console.log(data)
         this.setState({
-          cvs:data.body
+          cvs: data.body
         })
       })
   }
