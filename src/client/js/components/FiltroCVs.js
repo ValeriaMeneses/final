@@ -8,6 +8,7 @@ export default class FiltroCVs extends React.Component{
     request
       .get('/api/cvs')
       .then(data => {
+        console.log(data)
         this.setState({
           cvs:data.body
         })
