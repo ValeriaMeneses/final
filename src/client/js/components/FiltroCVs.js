@@ -5,6 +5,7 @@ import {Link, NavLink} from 'react-router-dom';
 
 export default class FiltroCVs extends React.Component{
   componentWillMount () {
+    console.log('fetching cvs...')
     request
       .get('/api/cvs')
       .then(data => {
