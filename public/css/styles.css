@@ -155,7 +155,7 @@ body{
   margin: 4% 12%;
 
 }
-.category > a{
+.category > button{
   height: 100px;
   font-size: x-large;
   display: flex;

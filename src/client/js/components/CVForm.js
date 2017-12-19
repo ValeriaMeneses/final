@@ -39,6 +39,7 @@ export default class CVForm extends React.Component{
           otros:this.refs.otros.value || null,
           idiomas:this.refs.idiomas.value || null,
           entrevistado:0
+
         })
         .then(newcv =>{
           console.log(newcv);
