@@ -5,7 +5,7 @@ const pageRouter = Router();
 
 pageRouter
 .get('/', (req, res) => {
-  res.render('home.ejs');
+  res.render('reactApp.ejs');
 });
 
 pageRouter
