@@ -9,7 +9,7 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack -p --env.NODE_ENV=production",
-    "reseed": "knex migrate:rollback && knex migrate:latest && knex seed:run"
+    "reseed": "knex migrate:rollback && knex migrate:latest && knex seed:run"    
   },
   "author": "",
   "license": "ISC",
