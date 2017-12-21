@@ -22,9 +22,10 @@ export default class CVSolo extends React.Component{
   render(){
     let cv = this.state.cvs
     let filtro = cv.filter(element => {
-      if (element.entrevistado === false ) return true
+      if (element.entrevistado ===false ) return true
     })
     .map(function (element) {
+      console.log(element);
       let idInterview = "/interview/" + element.id
       return(
         <tr key={element.id}>
