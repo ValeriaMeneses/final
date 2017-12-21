@@ -46,7 +46,7 @@ export default class FiltroCVs extends React.Component{
             </tr>
           )
         }
-        if (element.entrevistado === false  ||  element.entrevistado === 0) {
+        if (element.entrevistado === 0 || element.entrevistado === false) {
           return(
             <tr key={element.id}>
               <td>{element.nombres.toUpperCase() + ' ' + element.apellidos.toUpperCase()}</td>
