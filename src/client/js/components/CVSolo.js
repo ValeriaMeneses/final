@@ -4,11 +4,9 @@ import {Link, NavLink} from 'react-router-dom';
 
 export default class CVSolo extends React.Component{
   componentWillMount () {
-    console.log('fetch cvs...');
     request
       .get('/api/cvs')
       .then(data => {
-        console.log('data received', data)
         this.setState({
           cvs: data.body
         })
@@ -23,8 +21,6 @@ export default class CVSolo extends React.Component{
   }
   render(){
     let cv = this.state.cvs
-
-    console.log('rendering cvs on CVSOLO', cv)
     let filtro = cv.filter(element => {
       if (element.entrevistado === 0 || element.entrevistado === false)
        {
@@ -41,8 +37,6 @@ export default class CVSolo extends React.Component{
         </tr>
       )
     })
-
-    console.log('filtered cvs', filtro)
     return(
       <div className="tabla">
         <h1 className="center">Curriculums para entrevistar</h1>
