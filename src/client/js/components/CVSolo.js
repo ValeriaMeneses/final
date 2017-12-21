@@ -7,6 +7,7 @@ export default class CVSolo extends React.Component{
     request
       .get('/api/cvs')
       .then(data => {
+        console.log(data);
         this.setState({
           cvs:data.body
         })
@@ -25,7 +26,6 @@ export default class CVSolo extends React.Component{
       if (element.entrevistado ===false ) return true
     })
     .map(function (element) {
-      console.log(element);
       let idInterview = "/interview/" + element.id
       return(
         <tr key={element.id}>
