@@ -22430,9 +22430,7 @@ var FiltroCVs = function (_React$Component) {
   FiltroCVs.prototype.componentWillMount = function componentWillMount() {
     var _this2 = this;
 
-    console.log('fetching cvs...');
     __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.get('/api/cvs').then(function (data) {
-      console.log(data);
       _this2.setState({
         cvs: data.body
       });
@@ -22631,7 +22629,9 @@ var CVSolo = function (_React$Component) {
   CVSolo.prototype.componentWillMount = function componentWillMount() {
     var _this2 = this;
 
+    console.log('fetch cvs...');
     __WEBPACK_IMPORTED_MODULE_1_superagent___default.a.get('/api/cvs').then(function (data) {
+      console.log('data received', data);
       _this2.setState({
         cvs: data.body
       });
@@ -22651,8 +22651,12 @@ var CVSolo = function (_React$Component) {
 
   CVSolo.prototype.render = function render() {
     var cv = this.state.cvs;
+
+    console.log('rendering cvs on CVSOLO', cv);
     var filtro = cv.filter(function (element) {
-      if (element.entrevistado === 0) return true;
+      if (element.entrevistado === 0) {
+        return true;
+      }
     }).map(function (element) {
       var idInterview = "/interview/" + element.id;
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -22683,6 +22687,8 @@ var CVSolo = function (_React$Component) {
         )
       );
     });
+
+    console.log('filtered cvs', filtro);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'tabla' },
