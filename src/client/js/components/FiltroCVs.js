@@ -30,9 +30,17 @@ export default class FiltroCVs extends React.Component{
   render(){
     let cv= this.state.cvs
     let filter = cv.filter(element => {
-        if (this.state.visibleType === 'all') {return true}
-        if (this.state.visibleType === 'true'  && element.entrevistado === 1 || element.entrevistado === true){ return true}
-        if (this.state.visibleType === 'false'  &&  element.entrevistado === 0 || element.entrevistado === false) {return true}
+        if (this.state.visibleType === 'all') {
+          return true
+        }
+
+        if (this.state.visibleType === 'true'  && element.entrevistado === 1 || element.entrevistado === true){
+          return true
+        }
+        
+        if (this.state.visibleType === 'false'  &&  element.entrevistado === 0 || element.entrevistado === false) {
+          return true
+        }
     })
     .map(function (element) {
       let idCV = "/dynamic/" + element.id
