@@ -26,7 +26,8 @@ export default class CVSolo extends React.Component{
 
     console.log('rendering cvs on CVSOLO', cv)
     let filtro = cv.filter(element => {
-      if (element.entrevistado === 0 ) {
+      if (element.entrevistado === 0 || element.entrevistado === false)
+      ) {
         return true
       }
     })
