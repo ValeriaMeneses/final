@@ -31,13 +31,13 @@ export default class FiltroCVs extends React.Component{
     let cv= this.state.cvs
     let filter = cv.filter(element => {
         if (this.state.visibleType === 'all') {return true}
-        if (this.state.visibleType === 'true'  && element.entrevistado === true){ return true}
-        if (this.state.visibleType === 'false'  &&  element.entrevistado === false) {return true}
+        if (this.state.visibleType === 'true'  && element.entrevistado === 1 || element.entrevistado === true){ return true}
+        if (this.state.visibleType === 'false'  &&  element.entrevistado === 0 || element.entrevistado === false) {return true}
     })
     .map(function (element) {
       let idCV = "/dynamic/" + element.id
       let idInterview = "/interview/" + element.id
-        if (element.entrevistado === true) {
+        if (element.entrevistado === 1 || element.entrevistado === true) {
           return(
             <tr key={element.id}>
               <td>{element.nombres.toUpperCase() + ' ' + element.apellidos.toUpperCase()}</td>
@@ -46,7 +46,7 @@ export default class FiltroCVs extends React.Component{
             </tr>
           )
         }
-        if (element.entrevistado === false) {
+        if (element.entrevistado === 0 || element.entrevistado === false) {
           return(
             <tr key={element.id}>
               <td>{element.nombres.toUpperCase() + ' ' + element.apellidos.toUpperCase()}</td>
